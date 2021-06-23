@@ -1,8 +1,9 @@
-
 import 'package:flutter/material.dart';
 
 class ThemeChanger with ChangeNotifier {
-  bool _isLight = true;
+  bool _isLight;
+
+  ThemeChanger(this._isLight);
 
   bool get isLight => _isLight;
 

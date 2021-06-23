@@ -3,6 +3,7 @@ import 'package:learning_routes_and_themes/src/data/network.dart';
 import 'package:learning_routes_and_themes/src/model/album.dart';
 import 'package:learning_routes_and_themes/src/provider/theme_changer.dart';
 import 'package:learning_routes_and_themes/src/screen/detail.dart';
+import 'package:learning_routes_and_themes/src/util/shared_preferences_helper.dart';
 import 'package:provider/provider.dart';
 
 class Homepage extends StatefulWidget {
@@ -18,7 +19,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   late Future<List<Album>> _albums;
   int _selectedIndex = 0;
-  bool _switchValue = true;
+  bool _switchValue = SharedPreferencesHelper.isLightTheme;
 
   @override
   void initState() {
@@ -76,6 +77,7 @@ class _HomepageState extends State<Homepage> {
             Switch(
               value: _switchValue,
               onChanged: (bool value) {
+                SharedPreferencesHelper.saveThemeState(value);
                 context.read<ThemeChanger>().theme = value;
                 setState(() {
                   _switchValue = value;
