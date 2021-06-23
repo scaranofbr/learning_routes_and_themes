@@ -45,21 +45,18 @@ class _HomepageState extends State<Homepage> {
         builder: (context, snapshot) {
           final data = snapshot.data;
           if (data != null) {
-            return ListView.builder(
-                itemCount: data.length * 2,
+            return ListView.separated(
+                itemCount: data.length,
+                separatorBuilder: (context, index) => Divider(thickness: 2),
                 itemBuilder: (context, index) {
-                  if (index.isOdd)
-                    return Divider(
-                      thickness: 2,
-                    );
                   return ListTile(
                       title: Padding(
                         padding: EdgeInsets.only(left: 20),
-                        child: Text(data[index ~/ 2].title),
+                        child: Text(data[index].title),
                       ),
                       onTap: () {
                         Navigator.pushNamed(context, Detail.routeName,
-                            arguments: data[index ~/ 2].id);
+                            arguments: data[index].id);
                       });
                 });
           } else if (snapshot.hasError) {
