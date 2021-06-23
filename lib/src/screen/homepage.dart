@@ -8,7 +8,11 @@ import 'package:provider/provider.dart';
 
 class Homepage extends StatefulWidget {
   static const String routeName = '/';
-  final String kTitle = 'Albums';
+  final String kHomeTitle = 'Your Albums';
+  final String kThemeTitle = 'Your Theme';
+  final String kHomeNavigationTitle = 'Home';
+  final String kThemeNavigationTitle = 'Theme';
+  final String kChangeThemeLabel = 'CHANGE THEME';
 
   const Homepage({Key? key}) : super(key: key);
 
@@ -70,7 +74,7 @@ class _HomepageState extends State<Homepage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('CHANGE THEME'),
+            Text(widget.kChangeThemeLabel),
             SizedBox(
               height: 16,
             ),
@@ -93,17 +97,17 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.kTitle)),
+      appBar: AppBar(title: Text(_selectedIndex == 0 ? widget.kHomeTitle : widget.kThemeTitle)),
       body: _getWidgetfor(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: widget.kHomeNavigationTitle,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Theme',
+            label: widget.kThemeNavigationTitle,
           )
         ],
         currentIndex: _selectedIndex,

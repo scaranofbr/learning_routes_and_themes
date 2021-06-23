@@ -6,7 +6,8 @@ import 'package:learning_routes_and_themes/src/widget/detail_text.dart';
 class Detail extends StatefulWidget {
   static const String routeName = '/detail';
 
-  final String kTitle = 'Albums';
+  final String kDetailTitle = 'Albums';
+  final String kAlbumDetailTitle = 'TITLE';
 
   final int id;
 
@@ -28,7 +29,7 @@ class _DetailState extends State<Detail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.kTitle)),
+      appBar: AppBar(title: Text(widget.kDetailTitle)),
       body: FutureBuilder<Album>(
         future: album,
         builder: (context, snapshot) {
@@ -46,7 +47,7 @@ class _DetailState extends State<Detail> {
                   SizedBox(
                     height: 20,
                   ),
-                  DetailText('TITLE', '${data.title}')
+                  DetailText(widget.kAlbumDetailTitle, '${data.title}')
                 ]));
           } else if (snapshot.hasError) {
             return Center(child: Text("${snapshot.error}"));
