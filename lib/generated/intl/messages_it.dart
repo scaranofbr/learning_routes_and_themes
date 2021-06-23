@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a it locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -17,17 +17,17 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'it';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "albumDetailTitle": MessageLookupByLibrary.simpleMessage("TITLE"),
-        "changeThemeLabel":
-            MessageLookupByLibrary.simpleMessage("CHANGE THEME"),
-        "detailTitle": MessageLookupByLibrary.simpleMessage("Selected Album"),
+        "albumDetailTitle": MessageLookupByLibrary.simpleMessage("TITOLO"),
+        "changeThemeLabel": MessageLookupByLibrary.simpleMessage("CAMBIA TEMA"),
+        "detailTitle":
+            MessageLookupByLibrary.simpleMessage("Album Selezionato"),
         "homeNavigationTitle": MessageLookupByLibrary.simpleMessage("Home"),
-        "homeTitle": MessageLookupByLibrary.simpleMessage("Your Albums"),
-        "themeNavigationTitle": MessageLookupByLibrary.simpleMessage("Theme"),
-        "themeTitle": MessageLookupByLibrary.simpleMessage("Your Theme")
+        "homeTitle": MessageLookupByLibrary.simpleMessage("I tuoi Album"),
+        "themeNavigationTitle": MessageLookupByLibrary.simpleMessage("Tema"),
+        "themeTitle": MessageLookupByLibrary.simpleMessage("Il tuo Tema")
       };
 }

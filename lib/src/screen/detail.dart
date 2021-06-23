@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_routes_and_themes/generated/l10n.dart';
 import 'package:learning_routes_and_themes/src/data/network.dart';
 import 'package:learning_routes_and_themes/src/model/album.dart';
 import 'package:learning_routes_and_themes/src/widget/detail_text.dart';
@@ -6,8 +7,8 @@ import 'package:learning_routes_and_themes/src/widget/detail_text.dart';
 class Detail extends StatefulWidget {
   static const String routeName = '/detail';
 
-  final String kDetailTitle = 'Albums';
-  final String kAlbumDetailTitle = 'TITLE';
+  String get kDetailTitle => S.current.detailTitle;
+  String get kAlbumDetailTitle => S.current.albumDetailTitle;
 
   final int id;
 

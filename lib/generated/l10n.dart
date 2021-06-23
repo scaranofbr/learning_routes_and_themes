@@ -49,6 +49,76 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Your Albums`
+  String get homeTitle {
+    return Intl.message(
+      'Your Albums',
+      name: 'homeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Theme`
+  String get themeTitle {
+    return Intl.message(
+      'Your Theme',
+      name: 'themeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get homeNavigationTitle {
+    return Intl.message(
+      'Home',
+      name: 'homeNavigationTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Theme`
+  String get themeNavigationTitle {
+    return Intl.message(
+      'Theme',
+      name: 'themeNavigationTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CHANGE THEME`
+  String get changeThemeLabel {
+    return Intl.message(
+      'CHANGE THEME',
+      name: 'changeThemeLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selected Album`
+  String get detailTitle {
+    return Intl.message(
+      'Selected Album',
+      name: 'detailTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `TITLE`
+  String get albumDetailTitle {
+    return Intl.message(
+      'TITLE',
+      name: 'albumDetailTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +127,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'it'),
     ];
   }
 

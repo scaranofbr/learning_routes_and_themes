@@ -1,3 +1,9 @@
 {
-    
+  "homeTitle" : "Your Albums",
+  "themeTitle" : "Your Theme",
+  "homeNavigationTitle" : "Home",
+  "themeNavigationTitle" : "Theme",
+  "changeThemeLabel" : "CHANGE THEME",
+  "detailTitle" : "Selected Album",
+  "albumDetailTitle" : "TITLE"
 }

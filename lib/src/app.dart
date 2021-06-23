@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:learning_routes_and_themes/generated/l10n.dart';
 import 'package:learning_routes_and_themes/src/provider/theme_changer.dart';
 import 'package:learning_routes_and_themes/src/screen/detail.dart';
 import 'package:learning_routes_and_themes/src/screen/homepage.dart';
@@ -14,7 +16,16 @@ class RoutesAndThemesAppState extends State<RoutesAndThemesApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: context.watch<ThemeChanger>().isLight ? ThemeData.light() : ThemeData.dark(),
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
+      theme: context.watch<ThemeChanger>().isLight
+          ? ThemeData.light()
+          : ThemeData.dark(),
       initialRoute: '/',
       onGenerateRoute: (settings) {
         switch (settings.name) {

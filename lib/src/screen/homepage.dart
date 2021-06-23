@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_routes_and_themes/generated/l10n.dart';
 import 'package:learning_routes_and_themes/src/data/network.dart';
 import 'package:learning_routes_and_themes/src/model/album.dart';
 import 'package:learning_routes_and_themes/src/provider/theme_changer.dart';
@@ -8,13 +9,13 @@ import 'package:provider/provider.dart';
 
 class Homepage extends StatefulWidget {
   static const String routeName = '/';
-  final String kHomeTitle = 'Your Albums';
-  final String kThemeTitle = 'Your Theme';
-  final String kHomeNavigationTitle = 'Home';
-  final String kThemeNavigationTitle = 'Theme';
-  final String kChangeThemeLabel = 'CHANGE THEME';
+  String get kHomeTitle => S.current.homeTitle;
+  String get kThemeTitle => S.current.themeTitle;
+  String get kHomeNavigationTitle => S.current.homeNavigationTitle;
+  String get kThemeNavigationTitle => S.current.themeNavigationTitle;
+  String get kChangeThemeLabel => S.current.changeThemeLabel;
 
-  const Homepage({Key? key}) : super(key: key);
+  Homepage({Key? key}) : super(key: key);
 
   @override
   _HomepageState createState() => _HomepageState();
@@ -97,7 +98,9 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_selectedIndex == 0 ? widget.kHomeTitle : widget.kThemeTitle)),
+      appBar: AppBar(
+          title: Text(
+              _selectedIndex == 0 ? widget.kHomeTitle : widget.kThemeTitle)),
       body: _getWidgetfor(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: [
