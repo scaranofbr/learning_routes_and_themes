@@ -97,21 +97,15 @@ class Product extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   height: 50,
-                  child: ElevatedButton(
+                  child: ElevatedButton.icon(
                     onPressed: () {},
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.shopping_cart_outlined),
-                        SizedBox(width: 20),
-                        Text(
-                          'Aggiungi',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontFamily: GoogleFonts.roboto().fontFamily,
-                              fontSize: 19),
-                        )
-                      ],
+                    icon: Icon(Icons.shopping_cart_outlined),
+                    label: Text(
+                      'Aggiungi',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: GoogleFonts.roboto().fontFamily,
+                          fontSize: 19),
                     ),
                     style: ButtonStyle(
                         elevation: MaterialStateProperty.all(0),
