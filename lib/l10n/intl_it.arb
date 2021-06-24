@@ -2,8 +2,10 @@
     "homeTitle": "I tuoi Album",
     "themeTitle": "Il tuo Tema",
     "homeNavigationTitle": "Home",
-    "themeNavigationTitle": "Tema",
+    "settingsNavigationTitle": "Impostazioni",
     "changeThemeLabel": "CAMBIA TEMA",
+    "settingsProductButton" : "Controlla il prodotto",
     "detailTitle": "Album Selezionato",
-    "albumDetailTitle": "TITOLO"
+    "albumDetailTitle": "TITOLO",
+    "productTitle" : "Prodotto"
 }

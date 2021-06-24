@@ -27,7 +27,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Album Selezionato"),
         "homeNavigationTitle": MessageLookupByLibrary.simpleMessage("Home"),
         "homeTitle": MessageLookupByLibrary.simpleMessage("I tuoi Album"),
-        "themeNavigationTitle": MessageLookupByLibrary.simpleMessage("Tema"),
+        "productTitle": MessageLookupByLibrary.simpleMessage("Prodotto"),
+        "settingsNavigationTitle":
+            MessageLookupByLibrary.simpleMessage("Impostazioni"),
+        "settingsProductButton":
+            MessageLookupByLibrary.simpleMessage("Controlla il prodotto"),
         "themeTitle": MessageLookupByLibrary.simpleMessage("Il tuo Tema")
       };
 }

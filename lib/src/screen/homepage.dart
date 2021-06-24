@@ -4,6 +4,7 @@ import 'package:learning_routes_and_themes/src/data/network.dart';
 import 'package:learning_routes_and_themes/src/model/album.dart';
 import 'package:learning_routes_and_themes/src/provider/theme_changer.dart';
 import 'package:learning_routes_and_themes/src/screen/detail.dart';
+import 'package:learning_routes_and_themes/src/screen/product.dart';
 import 'package:learning_routes_and_themes/src/util/shared_preferences_helper.dart';
 import 'package:provider/provider.dart';
 
@@ -12,8 +13,9 @@ class Homepage extends StatefulWidget {
   String get kHomeTitle => S.current.homeTitle;
   String get kThemeTitle => S.current.themeTitle;
   String get kHomeNavigationTitle => S.current.homeNavigationTitle;
-  String get kThemeNavigationTitle => S.current.themeNavigationTitle;
+  String get kThemeNavigationTitle => S.current.settingsNavigationTitle;
   String get kChangeThemeLabel => S.current.changeThemeLabel;
+  String get kProductButton => S.current.settingsProductButton;
 
   Homepage({Key? key}) : super(key: key);
 
@@ -68,26 +70,34 @@ class _HomepageState extends State<Homepage> {
         },
       );
     } else {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(widget.kChangeThemeLabel),
-            SizedBox(
-              height: 16,
-            ),
-            Switch(
-              value: _switchValue,
-              onChanged: (bool value) {
-                SharedPreferencesHelper.saveThemeState(value);
-                context.read<ThemeChanger>().theme = value;
-                setState(() {
-                  _switchValue = value;
-                });
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(widget.kChangeThemeLabel),
+              SizedBox(
+                height: 16,
+              ),
+              Switch(
+                value: _switchValue,
+                onChanged: (bool value) {
+                  SharedPreferencesHelper.saveThemeState(value);
+                  context.read<ThemeChanger>().theme = value;
+                  setState(() {
+                    _switchValue = value;
+                  });
+                },
+              )
+            ],
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Product.routeName);
               },
-            )
-          ],
-        ),
+              child: Text(widget.kProductButton))
+        ],
       );
     }
   }

@@ -80,11 +80,11 @@ class S {
     );
   }
 
-  /// `Theme`
-  String get themeNavigationTitle {
+  /// `Settings`
+  String get settingsNavigationTitle {
     return Intl.message(
-      'Theme',
-      name: 'themeNavigationTitle',
+      'Settings',
+      name: 'settingsNavigationTitle',
       desc: '',
       args: [],
     );
@@ -95,6 +95,16 @@ class S {
     return Intl.message(
       'CHANGE THEME',
       name: 'changeThemeLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check product`
+  String get settingsProductButton {
+    return Intl.message(
+      'Check product',
+      name: 'settingsProductButton',
       desc: '',
       args: [],
     );
@@ -115,6 +125,16 @@ class S {
     return Intl.message(
       'TITLE',
       name: 'albumDetailTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product`
+  String get productTitle {
+    return Intl.message(
+      'Product',
+      name: 'productTitle',
       desc: '',
       args: [],
     );

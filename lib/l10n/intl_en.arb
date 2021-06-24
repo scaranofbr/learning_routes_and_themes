@@ -2,8 +2,10 @@
   "homeTitle" : "Your Albums",
   "themeTitle" : "Your Theme",
   "homeNavigationTitle" : "Home",
-  "themeNavigationTitle" : "Theme",
+  "settingsNavigationTitle" : "Settings",
   "changeThemeLabel" : "CHANGE THEME",
+  "settingsProductButton" : "Check product",
   "detailTitle" : "Selected Album",
-  "albumDetailTitle" : "TITLE"
+  "albumDetailTitle" : "TITLE",
+  "productTitle" : "Product"
 }
