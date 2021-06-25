@@ -6,6 +6,7 @@ import 'package:learning_routes_and_themes/src/provider/theme_changer.dart';
 import 'package:learning_routes_and_themes/src/screen/detail.dart';
 import 'package:learning_routes_and_themes/src/screen/homepage.dart';
 import 'package:learning_routes_and_themes/src/screen/product.dart';
+import 'package:learning_routes_and_themes/src/screen/shopping_cart.dart';
 import 'package:provider/provider.dart';
 
 class RoutesAndThemesApp extends StatefulWidget {
@@ -42,6 +43,10 @@ class RoutesAndThemesAppState extends State<RoutesAndThemesApp> {
             return MaterialPageRoute(builder: (context) {
               return Product();
             });
+          case ShoppingCart.routeName:
+            return MaterialPageRoute(builder: (context) {
+              return ShoppingCart();
+            });
         }
       },
     );
@@ -49,9 +54,20 @@ class RoutesAndThemesAppState extends State<RoutesAndThemesApp> {
 
   ThemeData _getThemeData(BuildContext context) {
     final isLight = context.watch<ThemeChanger>().isLight;
-    final theme = isLight ? ThemeData.light() : ThemeData.dark();
+    final theme = isLight
+        ? ThemeData.light().copyWith(
+            primaryColor: Color.fromRGBO(68, 83, 226, 1),
+          )
+        : ThemeData.dark();
     return theme.copyWith(
         textTheme:
-            theme.textTheme.apply(fontFamily: GoogleFonts.lora().fontFamily));
+            theme.textTheme.apply(fontFamily: GoogleFonts.lora().fontFamily),
+            floatingActionButtonTheme: FloatingActionButtonThemeData(
+              backgroundColor: Color.fromRGBO(68, 83, 226, 1)
+            ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                    Color.fromRGBO(68, 83, 226, 1)))));
   }
 }

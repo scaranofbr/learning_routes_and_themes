@@ -10,7 +10,7 @@ class Network {
     List data = json.decode(response.body);
     List<Album> result = data.map((e) => Album.fromJson(e)).toList();
     return result;
-  }
+  }  
 
   static Future<Album> getAlbum(int id) async {
     final url = Uri.parse('https://jsonplaceholder.typicode.com/albums/$id');

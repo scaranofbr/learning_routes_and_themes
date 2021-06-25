@@ -7,5 +7,6 @@
   "settingsProductButton" : "Check product",
   "detailTitle" : "Selected Album",
   "albumDetailTitle" : "TITLE",
-  "productTitle" : "Product"
+  "productTitle" : "Product",
+  "shoppingCartTitle" : "Shopping Cart"
 }

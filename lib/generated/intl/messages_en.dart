@@ -32,6 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Settings"),
         "settingsProductButton":
             MessageLookupByLibrary.simpleMessage("Check product"),
+        "shoppingCartTitle":
+            MessageLookupByLibrary.simpleMessage("Shopping Cart"),
         "themeTitle": MessageLookupByLibrary.simpleMessage("Your Theme")
       };
 }

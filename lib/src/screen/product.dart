@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:learning_routes_and_themes/generated/l10n.dart';
+import 'package:learning_routes_and_themes/src/screen/shopping_cart.dart';
 
 class Product extends StatelessWidget {
   static const String routeName = '/product';
@@ -14,7 +15,16 @@ class Product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(kProductTitle)),
+      appBar: AppBar(
+        title: Text(kProductTitle),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, ShoppingCart.routeName);
+              },
+              icon: Icon(Icons.shopping_bag))
+        ],
+      ),
       body: Center(
         child: Container(
           height: 550,
@@ -62,7 +72,6 @@ class Product extends StatelessWidget {
                 Text(
                   'Saugella Attiva Flacone 250 Ml',
                   style: TextStyle(
-                      color: Colors.black,
                       fontFamily: GoogleFonts.roboto().fontFamily,
                       fontSize: 32),
                 ),

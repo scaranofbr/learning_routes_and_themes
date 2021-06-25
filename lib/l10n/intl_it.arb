@@ -7,5 +7,6 @@
     "settingsProductButton" : "Controlla il prodotto",
     "detailTitle": "Album Selezionato",
     "albumDetailTitle": "TITOLO",
-    "productTitle" : "Prodotto"
+    "productTitle" : "Prodotto",
+    "shoppingCartTitle" : "Carrello"
 }
